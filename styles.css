@@ -409,6 +409,60 @@ summary {
   box-shadow: 0 0 0 1px rgba(32, 199, 212, 0.09), 0 20px 40px rgba(4, 8, 14, 0.38);
 }
 
+.download-page {
+  padding: 80px 0;
+}
+
+.download-page-shell {
+  display: flex;
+  justify-content: center;
+}
+
+.download-page-card {
+  width: min(760px, 100%);
+  padding: 40px 32px;
+  border-radius: 22px;
+  border: 1px solid rgba(101, 234, 242, 0.28);
+  background: linear-gradient(180deg, rgba(18, 24, 33, 0.96), rgba(11, 15, 20, 0.96));
+  box-shadow: 0 0 0 1px rgba(32, 199, 212, 0.08), 0 18px 40px rgba(4, 8, 14, 0.38);
+}
+
+.download-page-card h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  letter-spacing: -0.06em;
+}
+
+.download-meta {
+  margin-top: 16px;
+  color: var(--text-soft);
+  font-size: 1.02rem;
+}
+
+.download-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(48, 55, 68, 0.8);
+}
+
+.info-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--cyan-bright);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.download-info p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
 .download-content h2 {
   margin: 0 0 12px;
   font-size: clamp(2rem, 3vw, 3rem);
