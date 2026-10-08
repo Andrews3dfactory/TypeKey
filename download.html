@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browse TypeKeys releases and download verified builds for Windows, macOS, and Linux." />
+    <title>Downloads &amp; Version History | TypeKeys</title>
+    <link rel="icon" type="image/png" href="assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-shell">
+          <a class="brand" href="index.html" aria-label="TypeKeys home">
+            <img src="assets/logo.png" alt="TypeKeys logo" />
+            <span>TypeKeys</span>
+          </a>
+
+          <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html#features">Features</a>
+            <a href="index.html#how-it-works">How It Works</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="download.html" aria-current="page">Versions</a>
+          </nav>
+
+          <a class="btn btn-primary nav-download" href="index.html">Home</a>
+        </div>
+      </header>
+
+      <main>
+        <section class="section versions-page">
+          <div class="container versions-shell">
+            <div class="versions-heading">
+              <p class="eyebrow eyebrow-inline">Official TypeKeys releases</p>
+              <h1>Downloads &amp; Version History</h1>
+              <p>Choose your platform and find the latest release or an earlier version of TypeKeys.</p>
+            </div>
+
+            <div class="platform-picker" role="tablist" aria-label="Choose operating system">
+              <button class="platform-tab" id="platform-windows" type="button" role="tab" aria-controls="release-panel" aria-selected="true" tabindex="0" data-platform="windows">
+                <span class="platform-icon windows-icon" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+                <span>Windows</span>
+              </button>
+              <button class="platform-tab" id="platform-macos" type="button" role="tab" aria-controls="release-panel" aria-selected="false" tabindex="-1" data-platform="macos">
+                <span class="platform-icon" aria-hidden="true">⌘</span>
+                <span>macOS</span>
+              </button>
+              <button class="platform-tab" id="platform-linux" type="button" role="tab" aria-controls="release-panel" aria-selected="false" tabindex="-1" data-platform="linux">
+                <span class="platform-icon linux-icon" aria-hidden="true">🐧</span>
+                <span>Linux</span>
+              </button>
+            </div>
+
+            <section class="release-panel" id="release-panel" role="tabpanel" aria-labelledby="platform-windows" tabindex="0">
+              <div class="release-panel-heading">
+                <div>
+                  <p class="eyebrow eyebrow-inline">Release history</p>
+                  <h2 id="selected-platform-title">Windows releases</h2>
+                </div>
+                <a class="github-releases-link" href="https://github.com/Andrews3dfactory/TypeKey/releases" target="_blank" rel="noreferrer">All GitHub releases <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="release-status" id="release-status" role="status" aria-live="polite">Loading verified release information…</div>
+              <div class="release-list" id="release-list"></div>
+            </section>
+
+            <aside class="release-safety">
+              <h2>Download safely</h2>
+              <p>Downloads link directly to assets published in the official TypeKeys GitHub releases. Only verified assets for the selected platform are shown.</p>
+              <a href="https://github.com/Andrews3dfactory/TypeKey/releases" target="_blank" rel="noreferrer">Visit the official releases page</a>
+            </aside>
+
+            <aside class="release-safety" id="windows-guidance">
+              <h2>Windows installer guidance</h2>
+              <p>Download only from the official TypeKeys release page and confirm the installer filename matches the release asset. Windows may show a security warning; if the installer does not run, download it again from GitHub and verify the file completed successfully.</p>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div class="footer-brand-block">
+            <a class="brand brand-footer" href="index.html">
+              <img src="assets/logo.png" alt="TypeKeys logo" />
+              <span>TypeKeys</span>
+            </a>
+            <p>Text macros that type for you.</p>
+          </div>
+
+          <div class="footer-links">
+            <a href="index.html#features">Features</a>
+            <a href="index.html#faq">FAQ</a>
+            <a href="download.html">Downloads &amp; Versions</a>
+            <a href="https://github.com/Andrews3dfactory/TypeKey" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="container footer-bottom">
+          <p>&copy; <span id="year"></span> TypeKeys.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
