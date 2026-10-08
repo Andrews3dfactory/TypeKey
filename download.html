@@ -95,6 +95,18 @@
               <a class="btn btn-secondary build-script-download" href="build_macos.sh" download="build_macos.sh">Download macOS build script</a>
               <p class="build-script-warning">This does not install TypeKeys on Windows or produce a Mac app on Windows. The script must run on a Mac, and its success is not guaranteed until tested on macOS.</p>
             </aside>
+
+            <aside class="release-safety linux-build-guide" id="linux-build-guide" hidden>
+              <h2>Linux build script (experimental)</h2>
+              <p>This is a build helper script, not a Linux installer. I do not have Linux, so I have not been able to test whether this build works.</p>
+              <ol>
+                <li>Download the script on Windows and transfer <code>build_linux.sh</code> to your Linux computer.</li>
+                <li>Place it in the root of a complete TypeKeys application source checkout. This website repository does not contain the required app source files.</li>
+                <li>Open a terminal in that source folder and run <code>bash ./build_linux.sh</code>. The script requires Python 3, <code>tar</code>, <code>main.py</code>, <code>requirements.txt</code>, and <code>assets/typekeys-logo.png</code>.</li>
+              </ol>
+              <a class="btn btn-secondary build-script-download" href="build_linux.sh" download="build_linux.sh">Download Linux build script</a>
+              <p class="build-script-warning">This does not build a Linux app on Windows. Run it on Linux. It creates a portable <code>.tar.gz</code>; it also creates an AppImage only when <code>appimagetool</code> is installed. The script has not been tested on Linux, so success is not guaranteed. Global hotkeys require X11 or XWayland; native Wayland is not supported by pynput.</p>
+            </aside>
           </div>
         </section>
       </main>

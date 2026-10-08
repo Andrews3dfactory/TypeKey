@@ -207,6 +207,10 @@ const renderReleases = () => {
   if (macosBuildGuide) {
     macosBuildGuide.hidden = activePlatform !== 'macos';
   }
+  const linuxBuildGuide = document.getElementById('linux-build-guide');
+  if (linuxBuildGuide) {
+    linuxBuildGuide.hidden = activePlatform !== 'linux';
+  }
 
   if (hasReleaseError) {
     releaseStatus.replaceChildren();
