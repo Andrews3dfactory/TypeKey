@@ -28,6 +28,15 @@ const setDownloadState = () => {
   });
 };
 
+const disableComingSoonButtons = () => {
+  const disabledButtons = document.querySelectorAll('.download-button.is-disabled');
+  disabledButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+    });
+  });
+};
+
 const initNav = () => {
   const navToggle = document.querySelector(".nav-toggle");
   const mainNav = document.querySelector(".main-nav");
@@ -57,5 +66,6 @@ const updateFooterYear = () => {
 };
 
 setDownloadState();
+disableComingSoonButtons();
 initNav();
 updateFooterYear();
