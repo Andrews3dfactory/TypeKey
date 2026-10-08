@@ -617,6 +617,10 @@ button, summary { font: inherit; }
 }
 .release-safety h2 { margin: 0 0 6px; font-size: 1.05rem; }
 .release-safety p { margin: 0 0 10px; color: var(--text-soft); }
+.macos-build-guide ol { margin: 12px 0 16px; padding-left: 1.35rem; display: grid; gap: 8px; color: var(--text-soft); }
+.macos-build-guide code { padding: 0.1rem 0.35rem; border: 1px solid var(--border); border-radius: 5px; background: rgba(8, 10, 15, 0.55); color: var(--text); font-size: 0.9em; overflow-wrap: anywhere; }
+.build-script-download { margin: 0 0 12px; }
+.build-script-warning { margin: 0; color: var(--text-soft); font-size: 0.9rem; }
 
 .faq-wrap { display: grid; gap: 18px; }
 .faq-header { margin-bottom: 16px; }

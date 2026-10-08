@@ -203,6 +203,10 @@ const renderReleases = () => {
   if (windowsGuidance) {
     windowsGuidance.hidden = activePlatform !== 'windows';
   }
+  const macosBuildGuide = document.getElementById('macos-build-guide');
+  if (macosBuildGuide) {
+    macosBuildGuide.hidden = activePlatform !== 'macos';
+  }
 
   if (hasReleaseError) {
     releaseStatus.replaceChildren();

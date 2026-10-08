@@ -83,6 +83,18 @@
               <h2>Windows installer guidance</h2>
               <p>Download only from the official TypeKeys release page and confirm the installer filename matches the release asset. Windows may show a security warning; if the installer does not run, download it again from GitHub and verify the file completed successfully.</p>
             </aside>
+
+            <aside class="release-safety macos-build-guide" id="macos-build-guide" hidden>
+              <h2>macOS build script (experimental)</h2>
+              <p>This is a build helper script, not a macOS installer. I do not have a Mac, so I have not been able to test whether this build works.</p>
+              <ol>
+                <li>Download the script on Windows and transfer <code>build_macos.sh</code> to your Mac.</li>
+                <li>On the Mac, place it in the root of a complete TypeKeys application source checkout. This website repository does not contain the required app source files.</li>
+                <li>Open Terminal in that source folder and run <code>bash ./build_macos.sh</code>. The script requires macOS tools, Python 3, and the app's <code>main.py</code>, <code>requirements.txt</code>, and <code>assets/typekeys-logo.png</code>.</li>
+              </ol>
+              <a class="btn btn-secondary build-script-download" href="build_macos.sh" download="build_macos.sh">Download macOS build script</a>
+              <p class="build-script-warning">This does not install TypeKeys on Windows or produce a Mac app on Windows. The script must run on a Mac, and its success is not guaranteed until tested on macOS.</p>
+            </aside>
           </div>
         </section>
       </main>

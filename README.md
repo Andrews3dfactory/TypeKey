@@ -36,6 +36,8 @@ Platform tabs only show assets whose filenames identify a supported package type
 
 This avoids presenting a Windows installer as a macOS or Linux download. If no matching asset exists, that platform shows its unavailable state and links to the official releases page. Release notes are displayed as text from GitHub (not executable HTML), and API failures or rate limits leave a GitHub Releases fallback link.
 
+The macOS tab also offers `build_macos.sh` as an experimental build helper, not as a macOS download. Transfer it from Windows to a Mac and run it with `bash ./build_macos.sh` from the root of a complete TypeKeys application source checkout. It requires `main.py`, `requirements.txt`, `assets/typekeys-logo.png`, Python 3, and macOS tools including `sips`, `iconutil`, and `hdiutil`. This website repository does not contain those application source files, and the script has not been tested on a Mac; a successful build is not guaranteed.
+
 To publish a new version:
 
 1. Create a GitHub Release in `Andrews3dfactory/TypeKey` and upload the build artifacts.
