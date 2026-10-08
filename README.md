@@ -30,11 +30,11 @@ The download buttons are configured in `script.js` by the `typekeysConfig.releas
 
 ```js
 const typekeysConfig = {
-  releaseUrl: ""
+  releaseUrl: "https://github.com/Andrews3dfactory/TypeKey/releases/latest/download/TypeKeys-Setup.exe"
 };
 ```
 
-When a real GitHub Releases URL is confirmed, replace the empty string with the full release URL. Until then, the button remains clearly marked as `Coming Soon`.
+This points the website directly to the current GitHub release installer for Windows.
 
 ## Files included
 

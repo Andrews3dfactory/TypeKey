@@ -1,5 +1,5 @@
 const typekeysConfig = {
-  releaseUrl: ""
+  releaseUrl: "https://github.com/Andrews3dfactory/TypeKey/releases/latest/download/TypeKeys-Setup.exe"
 };
 
 const setDownloadState = () => {
