@@ -24,28 +24,38 @@ Then open <http://localhost:8000> in a browser.
 
 The site uses relative asset paths, so it works from a GitHub Pages subpath as well as the root domain.
 
-## Download configuration
+## Downloads and version history
 
-The download buttons are configured in `script.js` by the `typekeysConfig.releaseUrl` variable.
+The existing `download.html` page is the Downloads & Version History page. It reads release metadata from the public GitHub Releases API at runtime; no server, API key, or checked-in release manifest is required. Release versions, publication dates, prerelease status, notes, asset names, sizes, and download links come from the API response. Download buttons use the actual `browser_download_url` values returned by GitHub.
 
-```js
-const typekeysConfig = {
-  releaseUrl: "https://github.com/Andrews3dfactory/TypeKey/releases/latest/download/TypeKeys-Setup.exe"
-};
-```
+Platform tabs only show assets whose filenames identify a supported package type:
 
-This points the website directly to the current GitHub release installer for Windows.
+- Windows: `.exe` and `.msi`, plus `.zip` assets named for Windows.
+- macOS: `.dmg` and `.pkg`, plus `.zip` assets named for macOS.
+- Linux: `.AppImage`, `.deb`, and `.rpm`, plus `.zip` or `.tar.gz` assets named for Linux.
+
+This avoids presenting a Windows installer as a macOS or Linux download. If no matching asset exists, that platform shows its unavailable state and links to the official releases page. Release notes are displayed as text from GitHub (not executable HTML), and API failures or rate limits leave a GitHub Releases fallback link.
+
+To publish a new version:
+
+1. Create a GitHub Release in `Andrews3dfactory/TypeKey` and upload the build artifacts.
+2. Use filenames that clearly identify the target OS and a conventional package extension (for example, `TypeKeys-Setup.exe` or `TypeKeys-macos.dmg`).
+3. Set GitHub's **Set as a pre-release** option accurately. The page labels prereleases from this flag and never calls one the latest stable release.
+4. Publish the release. The page fetches it automatically; there is no website data file to edit.
+
+The website requests releases newest-first from GitHub and follows API pagination so older published versions remain accessible. If GitHub's public API is unavailable, visitors can still use the official releases page link.
 
 ## Files included
 
 - `index.html` — landing page structure and content
+- `download.html` — platform-selectable Downloads & Version History page
 - `styles.css` — styling, layout, and responsiveness
-- `script.js` — mobile navigation and download-button configuration
+- `script.js` — mobile navigation and live GitHub release history
 - `assets/logo.png` — TypeKeys logo asset
 - `assets/app-screenshot.png` — TypeKeys desktop application screenshot
 
 ## Notes
 
-- The project currently does not include a verified release executable, so the primary download buttons intentionally stay disabled until a live Windows release is confirmed.
-- No application source code, logos, or executable files were overwritten or removed.
-- The website follows the provided TypeKeys desktop aesthetic and uses the supplied logo and screenshot assets.
+- The current published release metadata is retrieved directly from GitHub; no release details or future builds are hard-coded on the website.
+- No application source code, logos, or executable files are overwritten by the website.
+- The website follows the TypeKeys desktop aesthetic and uses the supplied logo and screenshot assets.
